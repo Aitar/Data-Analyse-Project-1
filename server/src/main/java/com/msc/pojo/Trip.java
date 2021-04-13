@@ -4,7 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
@@ -12,7 +13,7 @@ import java.util.Date;
 public class Trip {
     int stationIn;
     int stationOut;
-    Date inTime;
-    Date outTime;
+    Timestamp inTime;
+    Timestamp outTime;
     int price;
 }

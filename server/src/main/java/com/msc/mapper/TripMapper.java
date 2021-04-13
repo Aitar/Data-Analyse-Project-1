@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface TripMapper {
 
-    @Select("select * from trips")
+    @Select("select * from trips order by in_time")
     @Results(id = "tripMap", value = {
             @Result(column = "station_in", property = "stationIn"),
             @Result(column = "station_out", property = "stationOut"),
