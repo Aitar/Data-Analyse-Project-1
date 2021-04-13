@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
+    "@antv/g6": "^4.2.6",
     "@types/echarts": "^4.9.7",
     "echarts": "^5.0.2",
     "ng-zorro-antd": "^11.4.0",
