@@ -37,6 +37,11 @@ public class DataAnalyseService {
         return map;
     }
 
+    /**
+     * 获取两站之间的车票价格
+     * @param trips 旅途信息，应该输入的是所有乘车信息
+     * @return 车票价格矩阵
+     */
     public int[][] getPrice(List<Trip> trips) {
         int[][] prices = new int[169][169];
         int count = 0;
@@ -52,9 +57,9 @@ public class DataAnalyseService {
     }
 
     /**
-     * 分时间统计
-     * @param trips
-     * @return
+     * 根据输入的旅途信息，统计各个战的流量信息
+     * @param trips 旅途信息
+     * @return 出站和入站流量数组，[0]为入站，[1]为出站
      */
     public int[][] countStationFlow(List<Trip> trips) {
         int[][] stationFlow = new int[2][169];

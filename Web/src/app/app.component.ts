@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isCollapsed = false;
+  title = '地铁数据分析';
+
 }
