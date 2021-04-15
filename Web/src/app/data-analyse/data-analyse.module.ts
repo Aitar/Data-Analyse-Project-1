@@ -16,6 +16,13 @@ import { DataMgtComponent } from './data-mgt/data-mgt.component';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import {NzInputNumberModule} from 'ng-zorro-antd/input-number';
 import {FormsModule} from '@angular/forms';
+import { RelationGraphComponent } from './week-view/relation-graph/relation-graph.component';
+import { ReportComponent } from './week-view/report/report.component';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import {NzSpaceModule} from 'ng-zorro-antd/space';
+import { ClassicComponent } from './week-view/classic/classic.component';
+
+
 
 @NgModule({
   declarations: [
@@ -26,6 +33,9 @@ import {FormsModule} from '@angular/forms';
     PieChartComponent,
     WeekViewComponent,
     DataMgtComponent,
+    RelationGraphComponent,
+    ReportComponent,
+    ClassicComponent,
 
   ],
   exports: [
@@ -44,7 +54,9 @@ import {FormsModule} from '@angular/forms';
     NzBreadCrumbModule,
     NgxEchartsModule,
     NzGridModule,
-    FormsModule
+    FormsModule,
+    NzStatisticModule,
+    NzSpaceModule,
   ]
 })
 export class DataAnalyseModule { }
