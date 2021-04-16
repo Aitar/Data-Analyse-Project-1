@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColumnChartComponent implements OnInit {
 
+  stations = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+  inFlowData = [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3];
+  outFlowData = [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3];
+
+  inFlow = {
+    name: '入站流量',
+    type: 'bar',
+    data: this.inFlowData,
+  };
+
+  outFlow = {
+    name: '出站流量',
+    type: 'bar',
+    data: this.outFlowData,
+  };
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,7 +31,7 @@ export class ColumnChartComponent implements OnInit {
   option = {
     title: {
       text: '地铁流量统计',
-      subtext: '本统计图只取流量前20的地忒站'
+      subtext: '本统计图只取流量前10的地忒站'
     },
     tooltip: {
       trigger: 'axis'
@@ -36,7 +52,7 @@ export class ColumnChartComponent implements OnInit {
     xAxis: [
       {
         type: 'category',
-        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+        data: this.stations
       }
     ],
     yAxis: [
@@ -44,39 +60,9 @@ export class ColumnChartComponent implements OnInit {
         type: 'value'
       }
     ],
-    series: [
-      {
-        name: '蒸发量',
-        type: 'bar',
-        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
-        markPoint: {
-          data: [
-            {type: 'max', name: '最大值'},
-            {type: 'min', name: '最小值'}
-          ]
-        },
-        markLine: {
-          data: [
-            {type: 'average', name: '平均值'}
-          ]
-        }
-      },
-      {
-        name: '降水量',
-        type: 'bar',
-        data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
-        markPoint: {
-          data: [
-            {name: '年最高', value: 182.2, xAxis: 7, yAxis: 183},
-            {name: '年最低', value: 2.3, xAxis: 11, yAxis: 3}
-          ]
-        },
-        markLine: {
-          data: [
-            {type: 'average', name: '平均值'}
-          ]
-        }
-      }
+    series: [ //展示的柱图
+      this.inFlow,
+      this.outFlow
     ]
   };
 }

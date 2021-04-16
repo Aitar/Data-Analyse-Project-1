@@ -11,12 +11,11 @@
     <nz-sider nzWidth="200px" nzTheme="light" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
       <ul nz-menu nzMode="inline" class="sider-menu">
         <li nz-menu-item nzSelected>
-          <i nz-icon nzType="user"></i>
-          <span>nav 1</span>
+          <a routerLink="./overview"><span>数据总览</span></a>
         </li>
         <li nz-menu-item>
           <i nz-icon nzType="user"></i>
-          <span>nav 2</span>
+          <a routerLink="./week-view"><span>周视图</span></a>
         </li>
         <li nz-menu-item>
           <i nz-icon nzType="user"></i>
@@ -29,8 +28,7 @@
 
       </nz-breadcrumb>
       <nz-content>
-<!--        <app-overview></app-overview>-->
-        <app-week-view></app-week-view>
+        <router-outlet></router-outlet>
       </nz-content>
     </nz-layout>
   </nz-layout>

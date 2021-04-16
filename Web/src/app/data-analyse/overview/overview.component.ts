@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpServiceService} from "../../service/http-service.service";
 
 @Component({
   selector: 'app-overview',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpServiceService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
